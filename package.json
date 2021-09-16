@@ -1,0 +1,16 @@
+{
+  "name": "bot-register-kaotajai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "form-data": "^4.0.0",
+    "read-excel-file": "^5.2.10"
+  }
+}
