@@ -34,7 +34,7 @@ const register_kaotajai = async (user) => {
       }}
     );
   } catch (error) {
-    return error.response.data;
+    return error.response;
   }
 }
 
@@ -45,7 +45,6 @@ const getRandomInt = (from,to) => {
 const app = async () => {
     let users = await xlsxFile("./data/users-test.xlsx")
 
-    let i = 0;
     let countAll = users.length - 1
     let countSuccess = 0
     let countFail = 0
@@ -54,8 +53,10 @@ const app = async () => {
       let user = users[i]
       const post_regis = await register_kaotajai(user);
       if(post_regis.status == 200){
+        console.log(["Success",user[1] + " - " + user[2] + " " + user[3]]);
         countSuccess++
       }else{
+        console.log(["Fail",user[1] + " - " + user[2] + " " + user[3]] + " - " + post_regis.data.message);
         console.log(post_regis.message);
         countFail++
       }
